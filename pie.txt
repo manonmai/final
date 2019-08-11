@@ -1,0 +1,97 @@
+import { Component, OnInit } from '@angular/core';
+import * as Highcharts from 'highcharts';  
+
+@Component({
+  selector: 'app-benchresource',
+  templateUrl: './benchresource.component.html',
+  styleUrls: ['./benchresource.component.scss']
+})
+export class BenchresourceComponent implements OnInit {
+
+  constructor() { }
+
+
+  
+  ngOnInit() {
+  }
+  highcharts = Highcharts;
+   chartOptions = {   
+  //    chart : {
+  //       plotBorderWidth: null,
+  //       plotShadow: false
+  //    },
+  //    title : {
+  //       text: 'Bench Resource'
+  //    },
+  //    tooltip : {
+  //       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  //    },
+  //    plotOptions : {
+  //       pie: {
+  //         allowPointSelect: true,
+  //         series: {
+  //           cursor: 'pointer',
+  //           point: {
+  //               events: {
+  //                   click: function() {
+  //                     location.href = this.options.url;
+  //                   }
+  //               }
+  //           }
+  //       }
+  //          ,dataLabels: {
+  //             enabled: true,
+  //             format: '<b>{point.name}%</b>: {point.percentage:.1f} %',
+  //             style: {
+  //                color:'black'
+  //             }
+  //          }
+  //       }
+  //    },
+  //    series : [{
+  //       type: 'pie',
+  //       name: 'Bench Resource',
+  //       data: [
+  //         {
+  //           y: 29.9,
+  //           url: 'http://bing.com/search?q=foo'
+  //       },
+  //          ['deployed', 80],
+  //          ['bench', 20]
+  //       ]
+  //    }]
+  // };
+  chart: {
+    type: 'pie'
+},
+xAxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+},
+
+plotOptions: {
+    series: {
+        cursor: 'pointer',
+        point: {
+            events: {
+                click: function() {
+                    this.show();
+                }
+            }
+        }
+    }
+},
+
+series: [{
+    data: [{
+        y: 29.9,
+        show:function(){
+          alert();
+        },
+    }, {
+        y: 71.5,show:function(){
+          alert("abcv");
+        },
+    } ]        
+}]
+}
+}
